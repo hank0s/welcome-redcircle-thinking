@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RedCircle, Reframed for Brands</title>
+<meta name="description" content="A first pass at how RedCircle's landing page could speak to brands. Direct access to trusted podcast communities, one team on execution, and reporting the marketer can defend. By Welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800;900&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #ed2924;
+    --red-dark: #c71f1a;
+    --charcoal: #191919;
+    --charcoal-2: #232323;
+    --charcoal-3: #2d2d2d;
+    --grey-1: #a3a3a3;
+    --grey-2: #d9d9d9;
+    --grey-3: #ececec;
+    --grey-4: #f5f5f5;
+    --white: #ffffff;
+    --line-light: rgba(0, 0, 0, 0.12);
+    --line-dark: rgba(255, 255, 255, 0.14);
+    --font-display: "Poppins", system-ui, -apple-system, sans-serif;
+    --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
+    --content-max: 1320px;
+    --pad-x: clamp(24px, 5vw, 96px);
+    --pad-y: clamp(72px, 10vw, 140px);
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 16px;
+    --s-4: 24px;
+    --s-5: 32px;
+    --s-6: 48px;
+    --s-7: 64px;
+    --s-8: 96px;
+    --s-9: 128px;
+  }
+
+  * { box-sizing: border-box; }
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--charcoal);
+    color: var(--charcoal);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  ::selection {
+    background: var(--red);
+    color: var(--white);
+  }
+
+  .section {
+    position: relative;
+    padding: var(--pad-y) var(--pad-x);
+  }
+  .section-dark {
+    background: var(--charcoal);
+    color: var(--grey-2);
+  }
+  .section-light {
+    background: var(--grey-4);
+    color: var(--charcoal);
+  }
+  .section-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--s-5);
+  }
+  .eyebrow-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--red);
+    flex: 0 0 auto;
+  }
+  .eyebrow-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .section-dark .eyebrow-label { color: var(--grey-1); }
+  .section-light .eyebrow-label { color: #6a6a6a; }
+
+  .section-head {
+    max-width: 920px;
+    margin-bottom: var(--s-8);
+  }
+  .section-title {
+    margin: 0 0 var(--s-4);
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.03;
+    letter-spacing: -0.03em;
+  }
+  .section-copy {
+    margin: 0;
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.65;
+  }
+  .section-dark .section-title { color: var(--white); }
+  .section-dark .section-copy { color: var(--grey-2); }
+  .section-light .section-title { color: var(--charcoal); }
+  .section-light .section-copy { color: #555; }
+
+  .hero {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(237, 41, 36, 0.58), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(237, 41, 36, 0.12), transparent 30%),
+      var(--charcoal);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: clamp(32px, 4vw, 64px) var(--pad-x);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.08;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hero > * {
+    position: relative;
+    z-index: 1;
+  }
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--s-4);
+    align-items: center;
+  }
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .mark-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .draft {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #c7c7c7;
+    text-align: right;
+  }
+  .hero-body {
+    max-width: 1120px;
+    padding: var(--s-9) 0;
+  }
+  .hero-kicker {
+    margin: 0 0 var(--s-5);
+    color: #d1d1d1;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .hero-title {
+    margin: 0 0 var(--s-5);
+    font-family: var(--font-display);
+    font-size: clamp(52px, 9vw, 116px);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    max-width: 980px;
+  }
+  .hero-copy {
+    margin: 0;
+    max-width: 680px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.6;
+  }
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: var(--s-6);
+    flex-wrap: wrap;
+  }
+  .hero-toc {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--s-4);
+    flex: 1 1 820px;
+  }
+  .toc-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: var(--s-3);
+  }
+  .toc-num {
+    display: block;
+    margin-bottom: 6px;
+    color: #c4c4c4;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .toc-name {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+  .hero-meta {
+    color: #c4c4c4;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line-light);
+    margin-bottom: var(--s-8);
+  }
+  .stats-grid.dark {
+    border-top-color: var(--line-dark);
+  }
+  .findings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--s-4);
+    margin-bottom: var(--s-8);
+  }
+  .finding-card {
+    min-height: 220px;
+    padding: var(--s-5);
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .finding-label {
+    display: block;
+    margin-bottom: var(--s-3);
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .finding-title {
+    margin: 0 0 var(--s-3);
+    font-family: var(--font-display);
+    font-size: clamp(19px, 1.8vw, 24px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: var(--charcoal);
+  }
+  .finding-copy {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .stat-card {
+    padding: var(--s-7) var(--s-5) var(--s-7) 0;
+    border-right: 1px solid var(--line-light);
+  }
+  .stats-grid.dark .stat-card {
+    border-right-color: var(--line-dark);
+  }
+  .stat-card:last-child { border-right: none; padding-right: 0; }
+  .stat-card:not(:first-child) { padding-left: var(--s-5); }
+  .stat-value {
+    margin: 0 0 var(--s-4);
+    font-family: var(--font-display);
+    font-size: clamp(42px, 5vw, 78px);
+    font-weight: 900;
+    line-height: 0.94;
+    letter-spacing: -0.04em;
+    color: var(--red);
+  }
+  .stat-label {
+    margin: 0 0 var(--s-3);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .section-dark .stat-label { color: var(--grey-1); }
+  .section-light .stat-label { color: #666; }
+  .stat-copy {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .section-dark .stat-copy { color: var(--grey-2); }
+  .section-light .stat-copy { color: #555; }
+
+  .quote-block {
+    margin: var(--s-7) 0;
+    padding-left: var(--s-5);
+    border-left: 3px solid var(--red);
+    max-width: 920px;
+  }
+  .quote-text {
+    margin: 0 0 var(--s-3);
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 34px);
+    font-weight: 700;
+    line-height: 1.24;
+    letter-spacing: -0.02em;
+  }
+  .section-dark .quote-text { color: var(--white); }
+  .section-light .quote-text { color: var(--charcoal); }
+  .quote-meta {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .section-dark .quote-meta { color: var(--grey-1); }
+  .section-light .quote-meta { color: #777; }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+    padding-top: var(--s-7);
+    border-top: 1px solid var(--line-dark);
+    margin-top: var(--s-8);
+  }
+  .pillar-card {
+    padding-right: var(--s-3);
+  }
+  .pillar-num {
+    display: block;
+    margin-bottom: var(--s-3);
+    color: var(--grey-1);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .pillar-title {
+    margin: 0 0 var(--s-3);
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2vw, 26px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--white);
+  }
+  .pillar-copy {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ededed;
+  }
+
+  .message-frame {
+    border: 1px solid var(--line-light);
+    background: rgba(255, 255, 255, 0.7);
+    padding: clamp(28px, 4vw, 56px);
+    margin-top: var(--s-8);
+  }
+  .message-kicker {
+    margin: 0 0 var(--s-4);
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .message-headline {
+    margin: 0 0 var(--s-4);
+    font-family: var(--font-display);
+    font-size: clamp(40px, 6vw, 82px);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    color: var(--charcoal);
+    max-width: 920px;
+  }
+  .message-subhead {
+    margin: 0;
+    max-width: 860px;
+    font-size: clamp(18px, 1.5vw, 22px);
+    line-height: 1.6;
+    color: #555;
+  }
+  .message-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+    padding-top: var(--s-7);
+    margin-top: var(--s-7);
+    border-top: 1px solid var(--line-light);
+  }
+  .message-card-label {
+    display: block;
+    margin-bottom: var(--s-3);
+    color: #777;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .message-card-title {
+    margin: 0 0 var(--s-3);
+    font-family: var(--font-display);
+    font-size: clamp(18px, 1.8vw, 22px);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+  }
+  .message-card-copy {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .read-note {
+    max-width: 880px;
+    margin-bottom: var(--s-8);
+    padding: var(--s-5);
+    border-left: 3px solid var(--red);
+    background: rgba(0, 0, 0, 0.03);
+  }
+  .read-note p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #444;
+  }
+  .read-note strong {
+    color: var(--charcoal);
+    font-weight: 700;
+  }
+
+  .concept-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .concept-item {
+    display: grid;
+    grid-template-columns: 64px 1fr 320px;
+    gap: var(--s-6);
+    align-items: start;
+    padding: var(--s-7) 0;
+    border-top: 1px solid var(--line-light);
+  }
+  .concept-item:last-child {
+    border-bottom: 1px solid var(--line-light);
+  }
+  .concept-num {
+    padding-top: 6px;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--red);
+  }
+  .concept-card {
+    min-height: 184px;
+    padding: var(--s-5);
+    border: 1px dashed rgba(0, 0, 0, 0.28);
+    background: rgba(255, 255, 255, 0.65);
+  }
+  .concept-name {
+    display: block;
+    margin-bottom: var(--s-3);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #888;
+  }
+  .concept-headline {
+    margin: 0 0 var(--s-3);
+    font-family: var(--font-display);
+    font-size: clamp(18px, 1.9vw, 22px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--charcoal);
+  }
+  .concept-copy {
+    margin: 0;
+    max-width: 640px;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .concept-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+    margin-top: var(--s-4);
+  }
+  .concept-tag {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 2px;
+    background: rgba(0, 0, 0, 0.07);
+    color: #555;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .concept-tag.cta {
+    background: var(--red);
+    color: var(--white);
+    font-weight: 700;
+  }
+  .concept-why-label {
+    display: block;
+    margin-bottom: var(--s-3);
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .concept-why {
+    margin: 0;
+    color: #444;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  .next-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--s-4);
+    margin-top: var(--s-8);
+  }
+  .next-card {
+    min-height: 224px;
+    padding: var(--s-5);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .next-num {
+    display: block;
+    margin-bottom: var(--s-3);
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--red);
+  }
+  .next-title {
+    margin: 0 0 var(--s-3);
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--white);
+  }
+  .next-copy {
+    margin: 0;
+    color: var(--grey-2);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .next-note {
+    max-width: 900px;
+    margin: var(--s-7) 0 0;
+    color: var(--grey-2);
+    font-size: clamp(17px, 1.4vw, 19px);
+    line-height: 1.65;
+  }
+
+  .close {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--pad-y) var(--pad-x);
+    background:
+      radial-gradient(circle at center, rgba(237, 41, 36, 0.18), transparent 52%),
+      var(--charcoal);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+  .close::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.05;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n2)'/%3E%3C/svg%3E");
+  }
+  .close-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+  .close-line {
+    margin: 0 0 var(--s-6);
+    font-family: var(--font-display);
+    font-size: clamp(30px, 4vw, 52px);
+    font-weight: 700;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+  }
+  .close-meta {
+    margin: 0;
+    color: var(--grey-1);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    line-height: 1.6;
+    text-transform: uppercase;
+  }
+  .close-dot {
+    width: 12px;
+    height: 12px;
+    margin: var(--s-7) auto 0;
+    border-radius: 50%;
+    background: var(--red);
+  }
+  .close-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin: var(--s-4) 0 var(--s-7);
+    padding: 18px 30px;
+    background: var(--red);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.005em;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background 180ms ease-out,
+      transform 150ms ease-out,
+      box-shadow 180ms ease-out;
+    box-shadow: 0 0 0 0 rgba(237, 41, 36, 0.0);
+  }
+  .close-cta:hover {
+    background: var(--red-dark);
+    box-shadow: 0 12px 40px -12px rgba(237, 41, 36, 0.55);
+  }
+  .close-cta:active {
+    transform: scale(0.97);
+  }
+  .close-cta:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+  }
+  .close-cta-arrow {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    transform: translateX(0);
+    transition: transform 180ms ease-out;
+  }
+  .close-cta:hover .close-cta-arrow {
+    transform: translateX(4px);
+  }
+  .close-secondary {
+    display: block;
+    margin: 0 0 var(--s-6);
+    color: var(--grey-1);
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .close-secondary a {
+    color: var(--grey-2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    transition: color 180ms ease-out, border-color 180ms ease-out;
+  }
+  .close-secondary a:hover {
+    color: var(--white);
+    border-bottom-color: var(--red);
+  }
+
+  @media (max-width: 1100px) {
+    .hero-toc {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .stats-grid,
+    .findings-grid,
+    .pillars-grid,
+    .message-grid,
+    .next-grid {
+      grid-template-columns: 1fr;
+    }
+    .stat-card {
+      padding: var(--s-6) 0;
+      border-right: none;
+      border-bottom: 1px solid var(--line-light);
+    }
+    .stats-grid.dark .stat-card {
+      border-bottom-color: var(--line-dark);
+    }
+    .stat-card:not(:first-child) {
+      padding-left: 0;
+    }
+    .stat-card:last-child {
+      border-bottom: none;
+    }
+    .concept-item {
+      grid-template-columns: 48px 1fr;
+    }
+    .concept-aside {
+      grid-column: 2;
+      padding-top: var(--s-3);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .hero-top,
+    .hero-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .hero-toc {
+      width: 100%;
+      grid-template-columns: 1fr 1fr;
+    }
+    .hero-meta,
+    .draft {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .hero-toc {
+      grid-template-columns: 1fr;
+    }
+    .message-frame,
+    .concept-card,
+    .next-card,
+    .read-note {
+      padding: 24px;
+    }
+  }
+
+  @media print {
+    @page {
+      size: A4;
+      margin: 0.5in;
+    }
+    body {
+      background: white;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .hero,
+    .section,
+    .close {
+      min-height: auto;
+      page-break-inside: avoid;
+      padding: 48px 32px;
+    }
+  }
+
+  /* ═════════════════════════════════════════════════════
+     APPENDIX — BRAND REFERENCE
+     ═════════════════════════════════════════════════════ */
+  .ref-sub {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #8a8a8a;
+    margin: 0 0 var(--s-5);
+  }
+  .ref-note {
+    max-width: 780px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: #555;
+    margin: 0 0 var(--s-8);
+  }
+
+  .ref-pillars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--s-5);
+    margin-bottom: var(--s-9);
+    padding-top: var(--s-6);
+    border-top: 1px solid var(--line-light);
+  }
+  .ref-pillar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s-3);
+  }
+  .ref-pillar-num {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--red);
+  }
+  .ref-pillar-name {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(20px, 2vw, 26px);
+    line-height: 1;
+    color: var(--charcoal);
+    letter-spacing: -0.015em;
+  }
+  .ref-pillar-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #555;
+  }
+
+  .ref-swatches {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0;
+    margin-bottom: var(--s-5);
+    border: 1px solid var(--line-light);
+    overflow: hidden;
+  }
+  .ref-swatch {
+    aspect-ratio: 1 / 1.3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--s-4);
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .ref-swatch:last-child { border-right: none; }
+  .ref-swatch--gradient {
+    background: radial-gradient(ellipse at 30% 35%, #ff7575 0%, #ed2924 35%, #9a1c18 80%);
+    color: var(--white);
+  }
+  .ref-swatch--gradient::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='rn1'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23rn1)'/%3E%3C/svg%3E");
+    opacity: 0.2;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  .ref-swatch--red { background: var(--red); color: var(--white); }
+  .ref-swatch--charcoal { background: var(--charcoal); color: var(--white); }
+  .ref-swatch--grey1 { background: var(--grey-1); color: var(--white); }
+  .ref-swatch--grey2 {
+    background: var(--grey-2);
+    color: var(--charcoal);
+    border-right-color: rgba(0, 0, 0, 0.08);
+  }
+  .ref-swatch--light {
+    background: var(--white);
+    color: var(--charcoal);
+    border-right-color: rgba(0, 0, 0, 0.08);
+  }
+  .ref-swatch-name {
+    position: relative; z-index: 2;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .ref-swatch-hex {
+    position: relative; z-index: 2;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0.92;
+  }
+
+  .ref-type {
+    margin-bottom: var(--s-5);
+    border-top: 1px solid var(--line-light);
+  }
+  .ref-type-row {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--s-6);
+    align-items: baseline;
+    padding: var(--s-5) 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .ref-type-label {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #888;
+    line-height: 1.4;
+  }
+  .ref-type-label-meta {
+    display: block;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-top: 4px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 10px;
+  }
+  .ref-type-sample {
+    color: var(--charcoal);
+    font-family: var(--font-display);
+  }
+  .ref-type-sample--display {
+    font-weight: 900;
+    font-size: clamp(34px, 4.8vw, 56px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+  }
+  .ref-type-sample--h1 {
+    font-weight: 800;
+    font-size: clamp(26px, 3.3vw, 40px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .ref-type-sample--h2 {
+    font-weight: 700;
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+  }
+  .ref-type-sample--body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 640px;
+  }
+  .ref-type-sample--overline {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  .ref-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-4);
+    margin-bottom: var(--s-5);
+  }
+  .ref-image {
+    color: var(--white);
+    padding: var(--s-5);
+    aspect-ratio: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .ref-image--gradient {
+    background: radial-gradient(ellipse at 25% 45%, #ff6b6b 0%, #ed2924 38%, #7e1714 90%);
+  }
+  .ref-image--gradient::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='rn2'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23rn2)'/%3E%3C/svg%3E");
+    opacity: 0.22;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+  .ref-image--loop {
+    background: var(--charcoal);
+  }
+  .ref-image--loop svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: 70%;
+    height: 70%;
+    z-index: 1;
+  }
+  .ref-image--stock {
+    background: linear-gradient(180deg, #cfcfcf 0%, #888 100%);
+    color: var(--charcoal);
+  }
+  .ref-image-label {
+    position: relative; z-index: 2;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .ref-image-title {
+    position: relative; z-index: 2;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--s-3);
+  }
+  .ref-image-desc {
+    position: relative; z-index: 2;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.55;
+    opacity: 0.92;
+    max-width: 280px;
+  }
+
+  .ref-loop-feature {
+    margin-top: var(--s-8);
+    padding: var(--s-8) var(--s-6);
+    background: var(--charcoal);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+    border-left: 3px solid var(--red);
+  }
+  .ref-loop-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+  }
+  .ref-loop-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(22px, 2.8vw, 32px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--white);
+    margin: 0 0 var(--s-4);
+  }
+  .ref-loop-copy {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--grey-2);
+    margin: 0;
+  }
+  .ref-loop-feature::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -240px;
+    width: 560px;
+    height: 560px;
+    border-radius: 50%;
+    border: 48px solid var(--red);
+    transform: translateY(-50%);
+    opacity: 0.9;
+    z-index: 1;
+  }
+
+  @media (max-width: 1100px) {
+    .ref-pillars { grid-template-columns: repeat(3, 1fr); }
+    .ref-swatches { grid-template-columns: repeat(3, 1fr); }
+    .ref-swatch { aspect-ratio: 1 / 1; border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
+    .ref-images { grid-template-columns: 1fr; }
+    .ref-image { aspect-ratio: 16 / 9; }
+    .ref-loop-feature::before { right: -320px; width: 440px; height: 440px; }
+  }
+  @media (max-width: 640px) {
+    .ref-pillars { grid-template-columns: 1fr 1fr; }
+    .ref-swatches { grid-template-columns: 1fr 1fr; }
+    .ref-type-row { grid-template-columns: 1fr; gap: var(--s-2); padding: var(--s-4) 0; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="hero-top">
+      <div class="mark">
+        <span class="mark-dot"></span>
+        <span>REDCIRCLE x WELCOME</span>
+      </div>
+      <div class="draft">PRIVATE LINK / FIRST PASS</div>
+    </div>
+
+    <div class="hero-body">
+      <p class="hero-kicker">Brand-direct landing page POV</p>
+      <h1 class="hero-title">RedCircle, Reframed for Brands</h1>
+      <p class="hero-copy">A first pass at how RedCircle could show up to brands without forcing a full rebrand: clearer positioning, stronger proof, and a cleaner story around trust and reporting.</p>
+    </div>
+
+    <div class="hero-bottom">
+      <div class="hero-toc">
+        <div class="toc-item">
+          <span class="toc-num">01</span>
+          <span class="toc-name">What's True</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">02</span>
+          <span class="toc-name">What We Found</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">03</span>
+          <span class="toc-name">The Story</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">04</span>
+          <span class="toc-name">The Page</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">05</span>
+          <span class="toc-name">Next Move</span>
+        </div>
+        <div class="toc-item">
+          <span class="toc-num">06</span>
+          <span class="toc-name">The Brand</span>
+        </div>
+      </div>
+      <div class="hero-meta">
+        Welcome x RedCircle<br>
+        April 2026
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="heard">
+    <div class="section-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-label">Section 01 / What's already true</span>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title">The business already made the move.</h2>
+        <p class="section-copy">This feels like a landing-page job, not a full rebrand job. The brand has enough range already. The immediate need is a page that speaks clearly to advertisers.</p>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <h3 class="stat-value">85%</h3>
+          <p class="stat-label">Revenue from direct brand relationships</p>
+          <p class="stat-copy">The business mix already reflects the shift. The page just needs to make that obvious the moment a brand lands on it.</p>
+        </article>
+        <article class="stat-card">
+          <h3 class="stat-value">15 to 50</h3>
+          <p class="stat-label">Near-term brand logo target</p>
+          <p class="stat-copy">The next move is a page focused enough to win the right conversations, not a site rebuild. That is a faster way to learn what actually pulls brand buyers in.</p>
+        </article>
+        <article class="stat-card">
+          <h3 class="stat-value">1 team</h3>
+          <p class="stat-label">Managed service plus live reporting</p>
+          <p class="stat-copy">Brands do not just get inventory. They get execution, visibility, and a team that can help them run podcasting like a real channel.</p>
+        </article>
+      </div>
+
+      <div class="findings-grid">
+        <article class="finding-card">
+          <span class="finding-label">What we found</span>
+          <h3 class="finding-title">Advertiser intent still lands on a creator story.</h3>
+          <p class="finding-copy">The product story is solid, but the current entry point still asks a brand to translate too much on its own. That is the first thing the new page should fix.</p>
+        </article>
+        <article class="finding-card">
+          <span class="finding-label">What we found</span>
+          <h3 class="finding-title">The reporting story is stronger than the site lets on.</h3>
+          <p class="finding-copy">The dashboard, attribution, and campaign visibility are real trust assets. Right now they feel underused relative to how important they are in the sale.</p>
+        </article>
+        <article class="finding-card">
+          <span class="finding-label">What we found</span>
+          <h3 class="finding-title">The brand already has enough range for brands.</h3>
+          <p class="finding-copy">The darker editorial system, the red circle, and the tone all have enough authority. This does not need a new identity to feel more premium.</p>
+        </article>
+        <article class="finding-card">
+          <span class="finding-label">What we found</span>
+          <h3 class="finding-title">A few dark treatments want more contrast.</h3>
+          <p class="finding-copy">Some of the current digital brand usage looks sharper in theory than in use. A brand-facing page should trade a little drama for cleaner reading.</p>
+        </article>
+      </div>
+
+      <div class="section-head" style="margin-bottom: 0;">
+        <h2 class="section-title">RedCircle is already acting like a brand partner.</h2>
+        <p class="section-copy">The shift is not from software to service. It is from creator-first packaging to brand-facing clarity. The advertiser relationships, the account support, and the reporting infrastructure are already in place.</p>
+      </div>
+
+      <div class="quote-block">
+        <p class="quote-text">"We've reoriented our pitch around us as a managed service for your brand in podcasting."</p>
+        <p class="quote-meta">Jeremy Lermitte - April 2 conversation</p>
+      </div>
+
+      <div class="section-head" style="margin-bottom: 0; max-width: 860px;">
+        <p class="section-copy">So the first job of the page is simple: make it immediately clear that a brand can enter podcasting through RedCircle directly, with stronger support and clearer reporting than they might expect.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="positioning">
+    <div class="section-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-label">Section 02 / What the page needs to say</span>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title">Access matters. Trust is the sell.</h2>
+        <p class="section-copy">The cleanest version of the story is this: RedCircle helps brands enter trusted podcast communities directly, while handling the execution and showing the work clearly.</p>
+      </div>
+
+      <div class="quote-block">
+        <p class="quote-text">RedCircle helps brands enter trusted podcast communities directly, while managing the execution and making the reporting easy to trust.</p>
+        <p class="quote-meta">One-line positioning</p>
+      </div>
+
+      <div class="section-head" style="margin-bottom: 0; max-width: 860px;">
+        <p class="section-copy">That keeps the page close to what Jeremy is actually selling. It avoids sounding like an agency pitch and lets the product credibility do real work.</p>
+      </div>
+
+      <div class="pillars-grid">
+        <article class="pillar-card">
+          <span class="pillar-num">01</span>
+          <h3 class="pillar-title">Trusted audiences</h3>
+          <p class="pillar-copy">Lead with the quality of the relationship, not just the existence of the channel. The host already carries trust and the brand gets to step into that context more credibly.</p>
+        </article>
+        <article class="pillar-card">
+          <span class="pillar-num">02</span>
+          <h3 class="pillar-title">One team running it</h3>
+          <p class="pillar-copy">One team can shape the strategy, run the campaign, and keep everything moving. That gives brand teams support without adding another bloated layer around the work.</p>
+        </article>
+        <article class="pillar-card">
+          <span class="pillar-num">03</span>
+          <h3 class="pillar-title">Clear reporting</h3>
+          <p class="pillar-copy">The platform makes the service easier to trust because marketers can see what is running, what is landing, and what deserves more budget.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="messaging">
+    <div class="section-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-label">Section 03 / The story to tell</span>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title">What the page needs to say, fast.</h2>
+        <p class="section-copy">The page only has to do a few things well: state the offer, prove it quickly, and make the next meeting feel obvious.</p>
+      </div>
+
+      <div class="read-note">
+        <p><strong>Working rule.</strong> Do not start by arguing against agencies. Start by showing why a brand would trust RedCircle in the first place: better access, a team that can run the work, and reporting they can take back to the boss.</p>
+      </div>
+
+      <div class="message-frame">
+        <p class="message-kicker">Opening line</p>
+        <h3 class="message-headline">Direct access to trusted podcast communities.</h3>
+        <p class="message-subhead">Plan, run, and measure podcast advertising end-to-end, with one team on execution and clear reporting throughout.</p>
+
+        <div class="message-grid">
+          <article>
+            <span class="message-card-label">Proof 01</span>
+            <h4 class="message-card-title">Trusted podcast communities</h4>
+            <p class="message-card-copy">This keeps the story rooted in audience quality and trust, not generic reach language.</p>
+          </article>
+          <article>
+            <span class="message-card-label">Proof 02</span>
+            <h4 class="message-card-title">Managed-service execution</h4>
+            <p class="message-card-copy">This makes the offer concrete for the buyer who wants help getting into the channel without building the whole workflow from scratch.</p>
+          </article>
+          <article>
+            <span class="message-card-label">Proof 03</span>
+            <h4 class="message-card-title">Platform-level transparency</h4>
+            <p class="message-card-copy">This gives the page credibility with the marketer who needs to defend spend, monitor performance, and optimize with confidence.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light" id="concept">
+    <div class="section-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-label">Section 04 / The page we'd build first</span>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title">Eight sections is enough for v1.</h2>
+        <p class="section-copy">Clean, high-proof, and easy to share. Enough to win the right meeting without pretending the page has to solve the whole brand in one pass.</p>
+      </div>
+
+      <div class="read-note">
+        <p><strong>How to read this.</strong> This is the first thing I would put in market, not the whole site map. The job is to give RedCircle a stronger page for outbound follow-ups, brand conversations, and internal alignment.</p>
+      </div>
+
+      <div class="concept-list">
+        <article class="concept-item">
+          <div class="concept-num">01</div>
+          <div class="concept-card">
+            <span class="concept-name">Hero + proof strip</span>
+            <h3 class="concept-headline">Direct access to trusted podcast communities.</h3>
+            <p class="concept-copy">RedCircle helps brands plan, run, and measure podcast advertising end-to-end, with one team on execution and reporting that stays visible throughout.</p>
+            <div class="concept-tags">
+              <span class="concept-tag">Embedded gradient backdrop</span>
+              <span class="concept-tag">Hero proof strip</span>
+              <span class="concept-tag cta">Primary CTA</span>
+              <span class="concept-tag">Circle motif</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">Up top, the shift has to read in seconds. RedCircle is speaking to brands here, and the offer needs to feel direct, capable, and measurable.</p>
+          </div>
+        </article>
+
+        <article class="concept-item">
+          <div class="concept-num">02</div>
+          <div class="concept-card">
+            <span class="concept-name">Logos / early proof</span>
+            <h3 class="concept-headline">Brands already spending through RedCircle.</h3>
+            <p class="concept-copy">A simple logo wall or proof strip featuring recognizable advertisers and a short line about the role RedCircle played.</p>
+            <div class="concept-tags">
+              <span class="concept-tag">Drizly</span>
+              <span class="concept-tag">Happy Mammoth</span>
+              <span class="concept-tag">Armoire</span>
+              <span class="concept-tag">Mood</span>
+              <span class="concept-tag">+ 2 to 3 more logos</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">Proof has to show up early. Once the page earns credibility, the rest of the story can stay calm and clean.</p>
+          </div>
+        </article>
+
+        <article class="concept-item">
+          <div class="concept-num">03</div>
+          <div class="concept-card">
+            <span class="concept-name">Why podcasting is hard for brands today</span>
+            <h3 class="concept-headline">Podcasting can work beautifully. It can also be hard to buy well.</h3>
+            <p class="concept-copy">Three concise pain points that explain why many brand teams are interested in the channel but still hesitant to commit budget.</p>
+            <div class="concept-tags">
+              <span class="concept-tag">Fragmented buying</span>
+              <span class="concept-tag">Limited transparency</span>
+              <span class="concept-tag">Hard to scale confidently</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">This sets up the offer without turning the page into a rant. The buyer should feel understood before the solution shows up.</p>
+          </div>
+        </article>
+
+        <article class="concept-item">
+          <div class="concept-num">04</div>
+          <div class="concept-card">
+            <span class="concept-name">Why RedCircle is different</span>
+            <h3 class="concept-headline">Direct access, one team, clear reporting.</h3>
+            <p class="concept-copy">A focused three-part value proposition that explains why RedCircle feels different from a typical agency workflow or a DIY buying process.</p>
+            <div class="concept-tags">
+              <span class="concept-tag">Direct access</span>
+              <span class="concept-tag">Managed service</span>
+              <span class="concept-tag">Transparent reporting</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">This is the trust section. It turns the strategy into buyer-facing reasons to choose RedCircle now.</p>
+          </div>
+        </article>
+
+        <article class="concept-item">
+          <div class="concept-num">05</div>
+          <div class="concept-card">
+            <span class="concept-name">How it works - three steps</span>
+            <h3 class="concept-headline">Plan. Launch. Optimize.</h3>
+            <p class="concept-copy">A simple three-step process that reassures brand teams the work can move from strategy to execution to learning without getting messy.</p>
+            <div class="concept-tags">
+              <span class="concept-tag">Strategy and onboarding</span>
+              <span class="concept-tag">Campaign launch</span>
+              <span class="concept-tag">Optimization and reporting</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">Process lowers perceived risk. It shows RedCircle can guide a brand through the whole channel, not just unlock access to inventory.</p>
+          </div>
+        </article>
+
+        <article class="concept-item">
+          <div class="concept-num">06</div>
+          <div class="concept-card">
+            <span class="concept-name">Reporting / transparency / measurement</span>
+            <h3 class="concept-headline">See every show, read, and result.</h3>
+            <p class="concept-copy">A product-led section using real dashboard language and eventually real screens to prove the service sits on top of actual reporting infrastructure.</p>
+            <div class="concept-tags">
+              <span class="concept-tag">Live reporting</span>
+              <span class="concept-tag">Attribution partners</span>
+              <span class="concept-tag">Performance visibility</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">This is the point where RedCircle stops feeling like just another service shop. The reporting layer makes the whole pitch easier to believe.</p>
+          </div>
+        </article>
+
+        <article class="concept-item">
+          <div class="concept-num">07</div>
+          <div class="concept-card">
+            <span class="concept-name">Case studies / selected proof</span>
+            <h3 class="concept-headline">Proof a team can forward around the office.</h3>
+            <p class="concept-copy">Two to four case studies with one headline metric, one challenge, and one result each. Enough detail to build confidence without turning the page into a PDF.</p>
+            <div class="concept-tags">
+              <span class="concept-tag">Mood</span>
+              <span class="concept-tag">Drizly</span>
+              <span class="concept-tag">Armoire</span>
+              <span class="concept-tag">Happy Mammoth</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">This is the proof layer that helps someone justify the next meeting. The key is picking the few examples that do the most work.</p>
+          </div>
+        </article>
+
+        <article class="concept-item">
+          <div class="concept-num">08</div>
+          <div class="concept-card">
+            <span class="concept-name">CTA - qualified next step</span>
+            <h3 class="concept-headline">Talk to the RedCircle team about your next campaign.</h3>
+            <p class="concept-copy">A clean final conversion section with one primary path and one lightweight supporting contact option. The page should end by inviting a real conversation, not by trying to answer every possible question.</p>
+            <div class="concept-tags">
+              <span class="concept-tag cta">Primary CTA</span>
+              <span class="concept-tag">Support contact path</span>
+              <span class="concept-tag">Simple close</span>
+            </div>
+          </div>
+          <div class="concept-aside">
+            <span class="concept-why-label">Why this section</span>
+            <p class="concept-why">The page should turn qualified interest into a real conversation. It does not need to settle every objection on its own.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="next">
+    <div class="section-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-label">Section 05 / Next move</span>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title">If this feels right, we tighten it together.</h2>
+        <p class="section-copy">One working session should be enough to lock the audience, pick the proof, and scope the first build.</p>
+      </div>
+
+      <div class="next-grid">
+        <article class="next-card">
+          <span class="next-num">01</span>
+          <h3 class="next-title">Who it's for</h3>
+          <p class="next-copy">Lock the buyer the page needs to speak to first, and which use cases matter most in the opening pass.</p>
+        </article>
+        <article class="next-card">
+          <span class="next-num">02</span>
+          <h3 class="next-title">Which proof</h3>
+          <p class="next-copy">Choose the two or three proof points and case studies that pull the most weight for the story.</p>
+        </article>
+        <article class="next-card">
+          <span class="next-num">03</span>
+          <h3 class="next-title">What ships</h3>
+          <p class="next-copy">Decide the exact v1 page structure, conversion path, and asset list so the work stays tight.</p>
+        </article>
+        <article class="next-card">
+          <span class="next-num">04</span>
+          <h3 class="next-title">What comes next</h3>
+          <p class="next-copy">Decide what should follow after the page if the test lands, whether that is more proof, more collateral, or a wider site shift.</p>
+        </article>
+      </div>
+
+      <p class="next-note">That keeps the first move appropriately small: a page that clarifies the shift, earns trust quickly, and gives RedCircle a stronger asset for outbound, follow-ups, and partner conversations.</p>
+    </div>
+  </section>
+
+  <section class="section section-light" id="brand-reference">
+    <div class="section-inner">
+      <div class="eyebrow">
+        <span class="eyebrow-dot"></span>
+        <span class="eyebrow-label">Section 06 / The brand we inherited</span>
+      </div>
+
+      <div class="section-head">
+        <h2 class="section-title">What we read in the guide.</h2>
+        <p class="section-copy">Here for reference. We did not invent any of this, we inherited it. The landing page would honor every piece without negotiation. Thirty-six pages of brand guidelines already carry enough range to build a brand-direct site without touching the identity itself.</p>
+      </div>
+
+      <span class="ref-sub">Tone — five pillars</span>
+      <div class="ref-pillars">
+        <div class="ref-pillar">
+          <span class="ref-pillar-num">01</span>
+          <span class="ref-pillar-name">Real</span>
+          <span class="ref-pillar-desc">Everyone else talks about what they offer. RedCircle shows it. Transparent, genuine, true to their word.</span>
+        </div>
+        <div class="ref-pillar">
+          <span class="ref-pillar-num">02</span>
+          <span class="ref-pillar-name">Leading Edge</span>
+          <span class="ref-pillar-desc">Best tech, always pushing the game forward. Joining the circle means gaining something the others don't have.</span>
+        </div>
+        <div class="ref-pillar">
+          <span class="ref-pillar-num">03</span>
+          <span class="ref-pillar-name">Hungry</span>
+          <span class="ref-pillar-desc">As ambitious as the people they serve. Big dreams, big appetites, ready for the next big thing.</span>
+        </div>
+        <div class="ref-pillar">
+          <span class="ref-pillar-num">04</span>
+          <span class="ref-pillar-name">Dedicated</span>
+          <span class="ref-pillar-desc">All-in on the brand purpose. The commitment is the distinction.</span>
+        </div>
+        <div class="ref-pillar">
+          <span class="ref-pillar-num">05</span>
+          <span class="ref-pillar-name">Reliable</span>
+          <span class="ref-pillar-desc">No partner gets left behind. The brand and service are always there when needed.</span>
+        </div>
+      </div>
+
+      <span class="ref-sub">Color — discipline as design</span>
+      <div class="ref-swatches">
+        <div class="ref-swatch ref-swatch--gradient">
+          <div class="ref-swatch-name">Gradient</div>
+          <div class="ref-swatch-hex">Tactile raster</div>
+        </div>
+        <div class="ref-swatch ref-swatch--red">
+          <div class="ref-swatch-name">Circle Red</div>
+          <div class="ref-swatch-hex">#ED2924</div>
+        </div>
+        <div class="ref-swatch ref-swatch--charcoal">
+          <div class="ref-swatch-name">Charcoal</div>
+          <div class="ref-swatch-hex">#191919</div>
+        </div>
+        <div class="ref-swatch ref-swatch--grey1">
+          <div class="ref-swatch-name">Mid Grey 1</div>
+          <div class="ref-swatch-hex">#A3A3A3</div>
+        </div>
+        <div class="ref-swatch ref-swatch--grey2">
+          <div class="ref-swatch-name">Mid Grey 2</div>
+          <div class="ref-swatch-hex">#D9D9D9</div>
+        </div>
+        <div class="ref-swatch ref-swatch--light">
+          <div class="ref-swatch-name">Light Grey</div>
+          <div class="ref-swatch-hex">#F5F5F5</div>
+        </div>
+      </div>
+      <p class="ref-note">Red is a knife, not a blanket. The brand guide is explicit about this: make room for ample clear space to give the red its intended bold impact. Charcoal and Light Grey carry the structure. Red appears at moments of consequence. We obey this without negotiation. It is the rule that separates the brand from every other red-accented SaaS template on the internet.</p>
+
+      <span class="ref-sub">Type — Mundial to Poppins, DM Sans body</span>
+      <div class="ref-type">
+        <div class="ref-type-row">
+          <div class="ref-type-label">Display<span class="ref-type-label-meta">Poppins Black 96 / -0.025em</span></div>
+          <div class="ref-type-sample ref-type-sample--display">The unfair advantage.</div>
+        </div>
+        <div class="ref-type-row">
+          <div class="ref-type-label">Heading 1<span class="ref-type-label-meta">Poppins ExtraBold 48 / -0.02em</span></div>
+          <div class="ref-type-sample ref-type-sample--h1">Built for brands that know better.</div>
+        </div>
+        <div class="ref-type-row">
+          <div class="ref-type-label">Heading 2<span class="ref-type-label-meta">Poppins Bold 32 / -0.015em</span></div>
+          <div class="ref-type-sample ref-type-sample--h2">Direct access, clear reporting.</div>
+        </div>
+        <div class="ref-type-row">
+          <div class="ref-type-label">Body<span class="ref-type-label-meta">DM Sans Regular 18 / 1.6</span></div>
+          <div class="ref-type-sample ref-type-sample--body">Brand-direct access to the most engaged audiences in media. The host is already trusted. That trust transfers to the brand. No agency. No middleman. No middle margin.</div>
+        </div>
+        <div class="ref-type-row">
+          <div class="ref-type-label">Overline<span class="ref-type-label-meta">DM Sans Bold 11 / 0.18em</span></div>
+          <div class="ref-type-sample ref-type-sample--overline">REDCIRCLE&nbsp;&nbsp;/&nbsp;&nbsp;THE OPPORTUNITY</div>
+        </div>
+      </div>
+      <p class="ref-note">Mundial is the brand's primary headline face, but it lives in Adobe Fonts only. The guide itself documents Poppins as the legitimate web fallback on page 23. We default to Poppins so this document and the eventual landing page render cleanly anywhere, with zero licensing friction. DM Sans handles body. Both faces are Google-served, free, and honor the geometric-sans personality the guide locks in.</p>
+
+      <span class="ref-sub">Image direction — three modes, one signature</span>
+      <div class="ref-images">
+        <div class="ref-image ref-image--gradient">
+          <div class="ref-image-label">Direction 01</div>
+          <div>
+            <div class="ref-image-title">Embedded<br>Gradient</div>
+            <div class="ref-image-desc">Film-toned photography with the red gradient bleeding in. Surreal warmth. Used full-bleed on hero moments. The brand's most distinctive treatment.</div>
+          </div>
+        </div>
+        <div class="ref-image ref-image--loop">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="100" cy="100" r="78" fill="none" stroke="#ed2924" stroke-width="22"/>
+          </svg>
+          <div class="ref-image-label">Direction 02</div>
+          <div>
+            <div class="ref-image-title">The Loop</div>
+            <div class="ref-image-desc">The red circle as a framing device. Photos clipped, contained, anchored to the loop. The brand's signature graphic primitive.</div>
+          </div>
+        </div>
+        <div class="ref-image ref-image--stock">
+          <div class="ref-image-label">Direction 03</div>
+          <div>
+            <div class="ref-image-title">Stock Guide</div>
+            <div class="ref-image-desc">Podcast-adjacent imagery. Mics, headphones, hosts at the desk. Minimal retouching, neutral colors. A fallback for utility moments only.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ref-loop-feature">
+        <div class="ref-loop-inner">
+          <h3 class="ref-loop-title">Everything belongs inside the circle.</h3>
+          <p class="ref-loop-copy">The loop is the brand's structural primitive, not decoration. It frames photography, anchors typography, contains the monogram, and in the production page would thread through the scroll as a single sustained gesture. We treat it as architecture. That is the difference between a brand that has a graphic device and a brand that is one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="close-inner">
+      <p class="close-line">If this reads right, let's go deeper.</p>
+      <a class="close-cta" href="mailto:hank@welcome.jpeg?subject=RedCircle%20landing%20page%20%E2%80%94%20let%27s%20go%20deeper">
+        Book a working session
+        <span class="close-cta-arrow" aria-hidden="true">→</span>
+      </a>
+      <p class="close-secondary">Or just reply to the email. <a href="mailto:hank@welcome.jpeg">hank@welcome.jpeg</a></p>
+      <p class="close-meta">Welcome × RedCircle · April 2026</p>
+      <div class="close-dot"></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
